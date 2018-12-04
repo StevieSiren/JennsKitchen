@@ -1,0 +1,73 @@
+.newrecipe-page {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('../img/newrecipebg.jpg');
+    background-size: cover;
+}
+
+.newrecipe-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    height: 45%;
+    width: 25%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.newrecipe-form h2 {
+    margin: 30px 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #B66B76;
+    letter-spacing: 2.5px;
+}
+
+.newrecipe-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newrecipe-form form input {
+    margin: 20px 0;
+    width: 75%;
+    height: 35px;
+    border: 1px solid #999;
+    background-color: #f6f6f6;
+}
+
+.newrecipe-form input[type="text"] {
+    font-size: 15px;
+    padding: 0 10px;
+}
+
+.newrecipe-form button {
+    padding: 15px 30px;
+    background-color: #B66B76;
+    border: none;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    transition: all .3s;
+}
+
+.newrecipe-form button:hover {
+    cursor: pointer;
+    background-color: rgb(148, 86, 95);
+}
+
+@media screen and (max-width: 1200px) {
+    .newrecipe-form {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .newrecipe-form {
+        height: 100%;
+        width: 100%;
+    }
+}

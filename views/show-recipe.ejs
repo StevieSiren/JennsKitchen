@@ -1,0 +1,20 @@
+<% include partials/header %>
+
+
+
+<!-- <p><%= recipe.name %></p>
+<img src="<%= recipe.image %>" alt="">
+<p><%= recipe.description %></p> -->
+
+<main class="showrecipe-page">
+    <div class="showrecipe-body">
+        <figure class="showrecipe-body_img">
+            <img src="<%= recipe.image %>" alt="Recipe Image" class="grid-img">
+        </figure>
+        <h1 class="showrecipe-body_title"><%= recipe.name %></h1>
+        <p class="showrecipe-body_des"><%= recipe.description %></p>
+    </div>
+</main>
+
+
+<% include partials/footer %>

@@ -1,0 +1,30 @@
+.showrecipe-page {
+    height: 100vh;
+    background: url('../img/newrecipebg.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+.showrecipe-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 90%;
+    width: 40%;
+    background-color: #fff;
+    display: grid;
+    grid-template-rows: 50% 10% 40%;
+}
+
+.showrecipe-body_img {
+    grid-row: 1 / 2;
+}
+
+.showrecipe-body_title {
+    grid-row: 2 / 3;
+}
+
+.showrecipe-body_des {
+    grid-row: 3 / -1;
+}
