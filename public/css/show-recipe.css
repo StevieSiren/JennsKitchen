@@ -28,3 +28,23 @@
 .showrecipe-body_des {
     grid-row: 3 / -1;
 }
+
+@media screen and (max-width: 1500px) {
+    .showrecipe-body {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .showrecipe-body {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .showrecipe-body {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.747);
+        padding: 10px;
+    }
+}

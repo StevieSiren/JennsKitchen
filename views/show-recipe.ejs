@@ -2,10 +2,6 @@
 
 
 
-<!-- <p><%= recipe.name %></p>
-<img src="<%= recipe.image %>" alt="">
-<p><%= recipe.description %></p> -->
-
 <main class="showrecipe-page">
     <div class="showrecipe-body">
         <figure class="showrecipe-body_img">
@@ -13,8 +9,13 @@
         </figure>
         <h1 class="showrecipe-body_title"><%= recipe.name %></h1>
         <p class="showrecipe-body_des"><%= recipe.description %></p>
+        <!-- <% recipe.comments.forEach((comment) => { %>
+            <p class="showrecipe-body_des"><strong><%= comment.author %></strong> - <%= comment.text %></p>
+        <% }); %> -->
+        
     </div>
 </main>
+
 
 
 <% include partials/footer %>

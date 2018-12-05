@@ -3,6 +3,15 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       mongoose = require('mongoose');
 
+const Recipe = require('./models/recipe'),
+      seedDB = require('./seeds');
+
+// Seed the database      
+seedDB();
+
+// =======================================================================
+// === APP SETUP === //
+// =======================================================================
 
 
 mongoose.connect("mongodb://localhost:27017/GBwithJenn");
@@ -10,33 +19,6 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
-// app.use('/css', express.static(__dirname + '/css'));
-
-
-
-// =======================================================================
-// === RECIPE SCHEMA SETUP === //
-// =======================================================================
-
-var recipeSchema = new mongoose.Schema({
-    name: String,
-    image: String,
-    description: String
-});
-
-var Recipe = mongoose.model("Recipe", recipeSchema);
-
-// Recipe.create({
-//     name: 'Bananas for Pancakes',
-//     image: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
-//     description: 'A delightful, fluffy stack of banana pancakes.'
-// }, (err, recipe) => {
-//     if(err) {
-//         console.log(err);
-//     } else {
-//         console.log(recipe);
-//     }
-// });
 
 
 
@@ -98,7 +80,7 @@ app.get('/recipes/new', (req, res) => {
 app.get('/recipes/:id', (req, res) => {
     // Find recipe with the provided ID
     var id = req.params.id;
-    Recipe.findById(id, (err, foundRecipe) => {
+    Recipe.findById(id).populate('comments').exec((err, foundRecipe) => {
         if(err) {
             console.log(err);
         } else {
